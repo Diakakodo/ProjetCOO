@@ -4,7 +4,7 @@ public class Vendeur extends Employe{
 	
 	double commission;
 	
-	public Vendeur(double salaireDeBase, byte anciennete, double commission){
+	public Vendeur(double salaireDeBase, int anciennete, double commission){
 		super(salaireDeBase, anciennete);
 		this.commission = commission;
 	}
