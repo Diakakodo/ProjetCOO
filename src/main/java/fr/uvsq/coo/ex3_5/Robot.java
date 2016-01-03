@@ -8,7 +8,4 @@ class Robot {
 	public void avance() { /* avance d’une case */ }
 }
 
-class RobotStatique extends Robot{
-@Override
-public void avance() { throw new UnsupportedOperationException(); }
-}
+//1. Cette solution ne respecte pas LSP, car RobotStatique ne respecte plus la sémantique de sa super class Robot
