@@ -1,0 +1,10 @@
+1. La classe SimplePrinter, bien que n'utilisant que la fonctionnalité print va subir un changement 
+ou une recompilation à chaque fois qu'une fonctionnalité scan, copy ou fax va changer.
+
+2. SimplePrinter devra être modifié pour changer l'appelle de la methode fax en void fax.
+
+3. Proposition d'une solution respectant ISP dans ce package: 
+    . Chaque fonctionnalité fera l'objet d'une interface. On aura donc les interfaces Printer, Scanner, Copier
+      et Faxer.
+    . SimplePrinter implement ainsi l'interface Printer. Ainsi la modification d'une fonctionnalié qu'il n'utilise
+      pas (fax par exemple) n'aura plus aucun impact sur lui.
