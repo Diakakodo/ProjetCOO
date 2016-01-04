@@ -7,5 +7,7 @@ public class RobotMobile extends Robot{
 	
 	public void tourne() { /* tourne ’1/4 de tour */ }
 	@Override
-	public void avance() { /* avance d’une case */ }
+	public void avance() { 
+		System.out.println("J'avance");
+	}
 }
