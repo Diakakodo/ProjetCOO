@@ -1,4 +1,4 @@
-package fr.uvsq.coo.projet_ex1;
+package fr.uvsq.coo.brouillon.projet_ex1;
 
 import java.util.ArrayList;
 
