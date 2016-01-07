@@ -2,7 +2,7 @@ package fr.uvsq.coo.ex3_8;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Personnel { //Implémentation du pattern de conception builder
+public class Personnel implements Element { //Implémentation du pattern de conception builder
 	
 	private final String nom;
 	private final String prenom;
@@ -21,7 +21,7 @@ public class Personnel { //Implémentation du pattern de conception builder
 		
 		//les attributs optionnels et initialisation avec des valeurs par defaut
 		private String fonctions="non definie";
-		private LocalDate dateDeNaissance="non definie";
+		private LocalDate dateDeNaissance=null;
 		private ArrayList<String> listNumerosTelephone=new ArrayList<String>();
 		
 		//constructeur avec les attributs obligatoires
