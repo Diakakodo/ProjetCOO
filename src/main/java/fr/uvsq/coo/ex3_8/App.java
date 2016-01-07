@@ -1,6 +1,6 @@
 package fr.uvsq.coo.ex3_8;
 
-public class App {
+public class App { //Implementation du pattern de conception SINGLETON
 	
 	private static App INSTANCE;
 	
