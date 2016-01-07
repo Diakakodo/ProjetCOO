@@ -1,0 +1,15 @@
+public class UneClasseMetier {
+	
+	public void uneMethodeMetier(){
+		System.out.println(LocalDateTime.now() + "Debut de uneMethodeMetier");
+		//Traitements metiers
+		System.out.println(LocalDateTime.now() + "Fin de uneMethodeMetier");
+	}
+}
+
+1. Ce code ne respecte pas le principe DIP. La classe UneClasseMetier ne doit pas dependre de la classe LocalDate
+   et de System.out. Par exemple un simple changement de l'affichage va entrainer une modification de la classe
+   metier.
+
+2. Proposition d'une solution respectant DIP dans le code de ce package. La classe metier va dependre d'une classe
+	qui s'occupera de l'affichage. Ainsi metier ne sera modifier que si ya un changement du besoin metier.
