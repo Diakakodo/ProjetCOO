@@ -58,4 +58,11 @@ public class Personnel implements Element { //Implémentation du pattern de conce
 		this.dateDeNaissance=builder.dateDeNaissance;
 		this.listNumerosTelephone=builder.listNumerosTelephone;
 	}
+	@Override
+	public void affiche() { //Affichage d'un personnel
+		// TODO Auto-generated method stub
+		System.out.print("NOM : "+nom+ "\tPRENOM : "+prenom+"\tFONCTION : "+fonctions+"\tDateDenaissance"+dateDeNaissance);
+		for(String numero: listNumerosTelephone) System.out.print(" "+numero);
+		System.out.println("");
+	}
 }
