@@ -11,12 +11,13 @@ public class SalaireProfessionnelsTest extends TestCase {
 
 	protected void setUp() throws Exception {
 		super.setUp();
-		ProfessionnelListe.add(new Employe(1500 , 2));
-		ProfessionnelListe.add(new Vendeur(1500 , 2 , 10));
+		ProfessionnelListe = new ArrayList<Professionnel>();
 	}
 	
 	public void testSalaireProfessionnels(){
-        double totalSalaire=0;
+        ProfessionnelListe.add(new Employe(1500 , 2));
+		ProfessionnelListe.add(new Vendeur(1500 , 2 , 10));
+		 double totalSalaire=0;
 		Iterator<Professionnel> it = ProfessionnelListe.iterator();
 		 
 		while (it.hasNext()) {

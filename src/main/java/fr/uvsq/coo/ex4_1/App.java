@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.uvsq.coo.ex3_9.Ecrire;
+
 public class App { //Implementation du pattern de conception SINGLETON
 	private static App INSTANCE;
 	private App(){
@@ -26,26 +28,15 @@ public class App { //Implementation du pattern de conception SINGLETON
 				.Fonction("Eleve")
 				.DateDeNaissance(LocalDate.now())
 				.build();
-		Personnel p3=new Personnel
-				.Builder("Yarbanga", "Emmnuel")
-				.Fonction("Eleve")
-				.DateDeNaissance(LocalDate.now())
-				.build();
-		Personnel p4=new Personnel
-				.Builder("Ben Ouirane", "Rahma")
-				.Fonction("Eleve")
-				.DateDeNaissance(LocalDate.now())
-				.build();
-		//Ajout des personnels créés dans le fichier
-		List<Personnel> listPersonnel = new ArrayList<Personnel>();
-		listPersonnel.add(p1);
-		listPersonnel.add(p2);
-		listPersonnel.add(p3);
-		listPersonnel.add(p4);
-		FichierPersonnel.ecrire(listPersonnel);
-		// Lecture des personnels
 		
-		listPersonnel=FichierPersonnel.lire();
+		//Pesister les personnels cree
+		DAO<Personnel> personneDAO = new PersonnelDAO();
+		personneDAO.creer(p1);
+		personneDAO.creer(p2);
+		
+		// Lecture des personnels
+		ArrayList<Personnel> listPersonnel= new ArrayList<Personnel>();
+		listPersonnel=personneDAO.lire();
 		for(Personnel p : listPersonnel) { p.affiche();}
 	}	
 	public static void main(String[] args) {
