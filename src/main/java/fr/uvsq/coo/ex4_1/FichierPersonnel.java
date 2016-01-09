@@ -11,19 +11,20 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FichierPersonnel {
 	//fonction d'ecriture d'un enregistrement dans le fichier
-	public static void ecrire(Personnel personne){
+	public static void ecrire(List<Personnel> listePersonne){
 		ObjectOutputStream wr;
 		try{
 			wr=new ObjectOutputStream(
 					new BufferedOutputStream(
 							new FileOutputStream(
 									new File("Personnels.txt"))));
-			/***/
-			wr.writeObject(personne);
-			/***/
+			for(Personnel personne : listePersonne){
+				wr.writeObject(personne);
+			}
 			wr.close();
 		}
 		catch(FileNotFoundException e){

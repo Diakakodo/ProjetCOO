@@ -37,12 +37,14 @@ public class App { //Implementation du pattern de conception SINGLETON
 				.DateDeNaissance(LocalDate.now())
 				.build();
 		//Ajout des personnels créés dans le fichier
-		FichierPersonnel.ecrire(p1);
-		FichierPersonnel.ecrire(p2);
-		FichierPersonnel.ecrire(p3);
-		FichierPersonnel.ecrire(p4);
-		// Lecture des personnels
 		List<Personnel> listPersonnel = new ArrayList<Personnel>();
+		listPersonnel.add(p1);
+		listPersonnel.add(p2);
+		listPersonnel.add(p3);
+		listPersonnel.add(p4);
+		FichierPersonnel.ecrire(listPersonnel);
+		// Lecture des personnels
+		
 		listPersonnel=FichierPersonnel.lire();
 		for(Personnel p : listPersonnel) { p.affiche();}
 	}	
