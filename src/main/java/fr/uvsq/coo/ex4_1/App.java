@@ -30,7 +30,7 @@ public class App { //Implementation du pattern de conception SINGLETON
 				.build();
 		
 		//Pesister les personnels cree
-		DAO<Personnel> personneDAO = new PersonnelDAO();
+		DAO<Personnel> personneDAO = DAOFactory.getPersonnelDAO();
 		personneDAO.creer(p1);
 		personneDAO.creer(p2);
 		
