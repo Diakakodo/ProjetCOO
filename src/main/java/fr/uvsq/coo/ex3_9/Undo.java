@@ -13,7 +13,7 @@ public class Undo implements Commande {
 	@Override
 	public void executer() {
 		// TODO Auto-generated method stub
-		historique.remove(historique.firstElement());
+		//historique.remove(historique.firstElement());
 	}
 
 	@Override
