@@ -12,7 +12,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class PersonnelDAO extends DAO<Personnel>{
+public class PersonnelTXTDAO extends DAO<Personnel>{
 
 	@Override
 	public boolean creer(Personnel personne) {

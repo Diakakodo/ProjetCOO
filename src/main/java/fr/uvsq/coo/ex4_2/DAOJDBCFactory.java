@@ -5,7 +5,7 @@ public class DAOJDBCFactory extends AbstractDAOFactory{
 	@Override
 	public DAO<Personnel> getPersonnelDAO() {
 		// TODO Auto-generated method stub
-		return new PersonnelDAO();
+		return new PersonnelJDBCDAO();
 	}
 
 }

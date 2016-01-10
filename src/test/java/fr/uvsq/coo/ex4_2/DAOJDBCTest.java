@@ -4,11 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.uvsq.coo.ex3_9.Ecrire;
 import fr.uvsq.coo.ex4_2.AbstractDAOFactory.DaoType;
 import junit.framework.TestCase;
 
-public class SerialisationTest extends TestCase {
+public class DAOJDBCTest extends TestCase {
 	Personnel p1;
 
 	protected void setUp() throws Exception {
@@ -23,7 +22,7 @@ public class SerialisationTest extends TestCase {
 	public void testDAOSerialisation(){
 		//Ajout des personnels créés dans le fichier
 		List<Personnel> listPersonnel = new ArrayList<Personnel>();
-		DAO<Personnel> personneDAO = AbstractDAOFactory.getFacrory(DaoType.TXT).getPersonnelDAO();
+		DAO<Personnel> personneDAO = AbstractDAOFactory.getFacrory(DaoType.JDBC).getPersonnelDAO();
 		personneDAO.creer(p1);
 		
 		// Lecture des personnels
