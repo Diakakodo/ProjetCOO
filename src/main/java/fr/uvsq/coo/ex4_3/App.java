@@ -1,4 +1,4 @@
-package fr.uvsq.coo.ex4_2;
+package fr.uvsq.coo.ex4_3;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -28,9 +28,9 @@ public class App { //Implementation du pattern de conception SINGLETON
 				.build();
 		
 		//Pesister les personnels cree
-		DAO<Personnel> personneDAO = AbstractDAOFactory.getFacrory(DaoType.JDBC).getPersonnelDAO();
+		DAO<Personnel> personneDAO = AbstractDAOFactory.getFacrory(DaoType.TXT).getPersonnelDAO();
 		personneDAO.creer(p1);
-		//personneDAO.creer(p2);
+		personneDAO.creer(p2);
 		
 		// Lecture des personnels
 		ArrayList<Personnel> listPersonnel= new ArrayList<Personnel>();
