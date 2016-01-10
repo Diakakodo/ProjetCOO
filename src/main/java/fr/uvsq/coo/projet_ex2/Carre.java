@@ -41,9 +41,9 @@ public class Carre implements Forme { // Mise en eouvre du patter builder
 	}
 	
 	@Override
-	public void chagneCouleurForme() {
+	public void chagneCouleurForme(Color nouvelleCouleur) {
 		// TODO Auto-generated method stub
-
+		this.setCouleur(nouvelleCouleur);
 	}
 
 	@Override
@@ -66,5 +66,11 @@ public class Carre implements Forme { // Mise en eouvre du patter builder
 
 	public void setCouleur(Color couleur) {
 		this.couleur = couleur;
+	}
+	
+	@Override
+	public void afficher() {
+		Ecrire.message("Je suis un Carre");
+		
 	}
 }

@@ -21,7 +21,7 @@ public class Cercle implements Forme { // Mise en eouvre du patter builder
 			this.centre=centre;
 			this.rayon=rayon;
 		}
-		//constructeur avec specification de parametre
+		//constructeur sans specification de parametre
 		public Builder(){
 			this.centre=new Point(0,0);
 			this.rayon=1;
@@ -46,9 +46,9 @@ public class Cercle implements Forme { // Mise en eouvre du patter builder
 	}
 	
 	@Override
-	public void chagneCouleurForme() {
+	public void chagneCouleurForme(Color nouvelleCouleur) {
 		// TODO Auto-generated method stub
-
+		this.setCouleur(nouvelleCouleur);
 	}
 
 	@Override
@@ -79,5 +79,11 @@ public class Cercle implements Forme { // Mise en eouvre du patter builder
 
 	public void setCouleur(Color couleur) {
 		this.couleur = couleur;
+	}
+
+	@Override
+	public void afficher() {
+		Ecrire.message("Je suis un cercle");
+		
 	}
 }
