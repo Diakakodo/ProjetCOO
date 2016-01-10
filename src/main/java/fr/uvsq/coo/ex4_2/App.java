@@ -2,9 +2,6 @@ package fr.uvsq.coo.ex4_2;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
-
-import fr.uvsq.coo.ex3_9.Ecrire;
 import fr.uvsq.coo.ex4_2.AbstractDAOFactory.DaoType;
 
 public class App { //Implementation du pattern de conception SINGLETON

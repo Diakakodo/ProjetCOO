@@ -20,9 +20,9 @@ public class SerialisationTest extends TestCase {
 				.build();
 	}
 	
-	public void testSerialisation(){
-		ArrayList<Personnel> listPersonnel=new ArrayList<Personnel>();
+	public void testDAOSerialisation(){
 		//Ajout des personnels créés dans le fichier
+		List<Personnel> listPersonnel = new ArrayList<Personnel>();
 		DAO<Personnel> personneDAO = AbstractDAOFactory.getFacrory(DaoType.TXT).getPersonnelDAO();
 		personneDAO.creer(p1);
 		

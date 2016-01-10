@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.uvsq.coo.ex3_9.Ecrire;
 import junit.framework.TestCase;
 
 public class SerialisationTest extends TestCase {
@@ -29,5 +28,16 @@ public class SerialisationTest extends TestCase {
 		listPersonnel=FichierPersonnel.lire();
 		Personnel p2=listPersonnel.get(0);
 		assertTrue(p1.getNom().equals(p2.getNom()));
-}
+	}
+	public void testSerialisationDAO(){
+		//Ajout des personnels créés dans le fichier
+		List<Personnel> listPersonnel = new ArrayList<Personnel>();
+		DAO<Personnel> personneDAO = DAOFactory.getPersonnelDAO();
+		personneDAO.creer(p1);
+		// Lecture des personnels
+		listPersonnel=personneDAO.lire();
+		Personnel p2=listPersonnel.get(0);
+		assertTrue(p1.getNom().equals(p2.getNom()));
+	}
+	
 }
