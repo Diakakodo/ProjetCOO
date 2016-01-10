@@ -1,9 +1,6 @@
 package fr.uvsq.coo.ex4_2;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-
 import fr.uvsq.coo.ex4_2.AbstractDAOFactory.DaoType;
 import junit.framework.TestCase;
 
@@ -20,14 +17,14 @@ public class DAOJDBCTest extends TestCase {
 	}
 	
 	public void testDAOSerialisation(){
-		//Ajout des personnels créés dans le fichier
-		List<Personnel> listPersonnel = new ArrayList<Personnel>();
-		DAO<Personnel> personneDAO = AbstractDAOFactory.getFacrory(DaoType.JDBC).getPersonnelDAO();
-		personneDAO.creer(p1);
+		DAO<Personnel> personnelDAO = AbstractDAOFactory.getFacrory(DaoType.JDBC).getPersonnelDAO();
+		personnelDAO.creer(p1);
 		
 		// Lecture des personnels
-		listPersonnel=personneDAO.lire();
-		Personnel p2=listPersonnel.get(0);
+		Personnel p2=new Personnel
+				.Builder("", "")
+				.build();
+		p2=personnelDAO.trouver(p1.getNom());
 		assertTrue(p1.getNom().equals(p2.getNom()));
-}
+ }
 }
