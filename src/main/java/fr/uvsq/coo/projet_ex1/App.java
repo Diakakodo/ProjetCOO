@@ -1,6 +1,6 @@
 package fr.uvsq.coo.projet_ex1;
 
-public class App { //Implementation du pattern builder
+public class App { 
 	
 	private static App INSTANCE; //definition de l'instance unique
 	
