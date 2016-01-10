@@ -2,7 +2,8 @@ package fr.uvsq.coo.ex4_3;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import fr.uvsq.coo.ex4_2.AbstractDAOFactory.DaoType;
+
+//import fr.uvsq.coo.ex4_3.AbstractDAOFactory.DaoType;
 
 public class App { //Implementation du pattern de conception SINGLETON
 	private static App INSTANCE;
@@ -28,7 +29,7 @@ public class App { //Implementation du pattern de conception SINGLETON
 				.build();
 		
 		//Pesister les personnels cree
-		DAO<Personnel> personneDAO = AbstractDAOFactory.getFacrory(DaoType.TXT).getPersonnelDAO();
+		DAO<Personnel> personneDAO = AbstractDAOFactory.getFacrory(DaoType.JPA).getPersonnelDAO();
 		personneDAO.creer(p1);
 		personneDAO.creer(p2);
 		

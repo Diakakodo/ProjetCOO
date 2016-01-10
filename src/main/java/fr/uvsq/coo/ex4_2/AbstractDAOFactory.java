@@ -2,7 +2,7 @@ package fr.uvsq.coo.ex4_2;
 
 public abstract class AbstractDAOFactory {
 	
-	public enum DaoType {JDBC, TXT;}
+	public enum DaoType {JDBC, TXT, JPA;}
 	
 	public abstract DAO getPersonnelDAO();
 	
