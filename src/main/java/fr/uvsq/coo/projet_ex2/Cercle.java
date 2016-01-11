@@ -1,9 +1,15 @@
 package fr.uvsq.coo.projet_ex2;
 
 import java.awt.Color;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class Cercle implements Forme { // Mise en eouvre du patter builder
 	//Parametres obligatoire
+	private int identifiant;
+	private String nom;
 	private Point centre;
 	private float rayon;
 	//Parametre optionel
@@ -11,6 +17,10 @@ public class Cercle implements Forme { // Mise en eouvre du patter builder
 	
 	public static class Builder{
 		//Parametres obligatoire
+		@Id
+		@GeneratedValue
+		private int identifiant;
+		private String nom="Cercle";
 		private Point centre;
 		private float rayon;
 		//Parametre optionel
@@ -39,6 +49,8 @@ public class Cercle implements Forme { // Mise en eouvre du patter builder
 
 	private Cercle(Builder builder){
 		//parametres requis
+		identifiant=builder.identifiant;
+		nom=builder.nom;
 		centre=builder.centre;
 		rayon=builder.rayon;
 		//parametres optionnels

@@ -2,14 +2,25 @@ package fr.uvsq.coo.projet_ex2;
 
 import java.awt.Color;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Carre implements Forme { // Mise en eouvre du patter builder
 	//Parametre obligatoire
+	private int identifiant;
+	private String nom;
 	private float cote;
 	//Parametre optionel
 	private Color couleur;
 	
 	public static class Builder{
 		//Parametres obligatoire
+		@Id
+		@GeneratedValue
+		private int identifiant;
+		private String nom="Carre";
 		private float cote;
 		//Parametre optionel
 		private Color couleur=Color.WHITE;
@@ -35,6 +46,8 @@ public class Carre implements Forme { // Mise en eouvre du patter builder
 
 	private Carre(Builder builder){
 		//parametres requis
+		identifiant=builder.identifiant;
+		nom=builder.nom;
 		cote=builder.cote;
 		//parametres optionnels
 		couleur=builder.couleur;

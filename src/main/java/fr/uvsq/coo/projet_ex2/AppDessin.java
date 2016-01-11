@@ -1,5 +1,7 @@
 package fr.uvsq.coo.projet_ex2;
 
+import java.time.LocalDate;
+
 public class AppDessin {
 	
 	private static AppDessin INSTANCE; //definition de l'instance unique
@@ -14,7 +16,17 @@ public class AppDessin {
 	}
 	
 	public void run(String args[]){ //...execution
+		//Creation d'une forme cercle
+		Cercle c1=new Cercle
+				.Builder()
+				.build();
+		Rectangle r1=new Rectangle
+				.Builder()
+				.build();
 		
+		//Pesister l'instance cree
+		DAO<Cercle> cercleDAO = AbstractDAOFactory.getFacrory(DaoType.JPA).getCercleDAO();
+		cercleDAO.creer(c1);
 	}
 
 	public static void main(String[] args) {

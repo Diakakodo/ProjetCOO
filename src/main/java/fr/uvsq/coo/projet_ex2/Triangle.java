@@ -2,8 +2,15 @@ package fr.uvsq.coo.projet_ex2;
 
 import java.awt.Color;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Triangle implements Forme { // Mise en eouvre du patter builder
 	//Parametres obligatoire
+	private int identifiant;
+	private String nom;
 	private float base;
 	private float hauteur;
 	//Parametre optionel
@@ -11,6 +18,10 @@ public class Triangle implements Forme { // Mise en eouvre du patter builder
 	
 	public static class Builder{
 		//Parametres obligatoire
+		@Id
+		@GeneratedValue
+		private int identifiant;
+		private String nom="Triangle";
 		private float base;
 		private float hauteur;
 		//Parametre optionel
@@ -39,6 +50,8 @@ public class Triangle implements Forme { // Mise en eouvre du patter builder
 
 	private Triangle(Builder builder){
 		//parametres requis
+		identifiant=builder.identifiant;
+		nom=builder.nom;
 		base=builder.base;
 		hauteur=builder.hauteur;
 		//parametres optionnels
